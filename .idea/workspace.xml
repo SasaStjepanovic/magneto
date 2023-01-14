@@ -4,14 +4,46 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="71b56e2c-3883-41f9-8a4b-9be4e5eaedfa" name="Changes" comment="" />
+    <list default="true" id="71b56e2c-3883-41f9-8a4b-9be4e5eaedfa" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/excel/ExcelSupport.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/selenium/ChromeDriverManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/selenium/Chrome_HeadlessDriverManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/selenium/DriverManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/selenium/DriverManagerFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/selenium/FirefoxDriverManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/features/1_CreateAccount.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/features/2_Login.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/pages/BasePage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/pages/CreateAccountPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/pages/LoginPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/runners/Runner.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/steps/BaseSteps.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/tests/BaseTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/tests/LoginProbaTestNG.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/test_data/magneto.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xmls/magnetoTestNGCucumber.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/xmls/magnetoTestNGproba.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2KKBay2UkZd4zQiOD6FYuzGhLeT" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -22,9 +54,49 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true"
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "jdk.selected.JAVA_MODULE": "1.8",
+    "last_opened_file_path": "C:/Users/Lenovo/Desktop/QA projekti/Automation_projekti/magneto/src/test/test_data"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Lenovo\Desktop\QA projekti\Automation_projekti\magneto\src\test\test_data" />
+      <recent name="C:\Users\Lenovo\Desktop\QA projekti\Automation_projekti\magneto\src\test\java\features" />
+      <recent name="C:\Users\Lenovo\Desktop\QA projekti\Automation_projekti\magneto\xmls" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="pages" />
+    </key>
+  </component>
+  <component name="RunManager" selected="TestNG.C:/Users/Lenovo/Desktop/QA projekti/Automation_projekti/magneto/xmls/magnetoTestNGCucumber.xml">
+    <configuration name="C:/Users/Lenovo/Desktop/QA projekti/Automation_projekti/magneto/xmls/magnetoTestNGCucumber.xml" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="magneto" />
+      <option name="SUITE_NAME" value="$PROJECT_DIR$/xmls/magnetoTestNGCucumber.xml" />
+      <option name="TEST_OBJECT" value="SUITE" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="C:/Users/Lenovo/Desktop/QA projekti/Automation_projekti/magneto/xmls/magneto.xml" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="magneto" />
+      <option name="SUITE_NAME" value="$PROJECT_DIR$/xmls/magneto.xml" />
+      <option name="TEST_OBJECT" value="SUITE" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="TestNG.C:/Users/Lenovo/Desktop/QA projekti/Automation_projekti/magneto/xmls/magnetoTestNGCucumber.xml" />
+        <item itemvalue="TestNG.C:/Users/Lenovo/Desktop/QA projekti/Automation_projekti/magneto/xmls/magneto.xml" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
