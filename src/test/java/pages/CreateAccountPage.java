@@ -1,5 +1,7 @@
 package pages;
 
+import com.github.javafaker.Faker;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -11,10 +13,106 @@ public class CreateAccountPage extends BasePage {
         PageFactory.initElements(driver, this);
     }
 
-    @FindBy(xpath = "//header[@class='page-header']//*[contains(text(), 'Create an Account')]")
+    @FindBy(xpath = "//button[@title='Create an Account']")
     WebElement createAccountButton;
+
+    @FindBy(css = "#firstname")
+    WebElement firstNameField;
+
+    @FindBy(css = "#lastname")
+    WebElement lastNameField;
+
+    @FindBy(css = "#email_address")
+    WebElement emailField;
+
+    @FindBy(css = "input#password")
+    WebElement passwordField;
+
+    @FindBy(css = "input#password-confirmation")
+    WebElement passwordConfirmField;
+
+    @FindBy(xpath = "//*[contains(text(),'Thank you for registering with Fake Online Clothing Store.')]")
+    WebElement accountRegistered;
+
+    @FindBy(xpath = "//div[@class='box box-information']//div")
+    WebElement accountInformation;
+
+    public void enterFirstName(String value){
+        typeText(firstNameField, value, "first name is entered");
+    }
+
+    public void enterLastName(String value){
+        typeText(lastNameField, value, "last name is entered");
+    }
+
+    public void enterEmail(String value){
+        typeText(emailField, value, "email is entered");
+    }
+
+    public void enterPassword(String value){
+        typeText(passwordField, value, "password is entered");
+    }
+
+    public void enterConfirmPassword(String value){
+        typeText(passwordConfirmField, value, "confirm password is entered");
+    }
 
     public void createAccountButton(){
         clickElement(createAccountButton, "create account button is pressed");
+    }
+
+
+    public String randomFirstName() {
+        Faker fakerData = new Faker();
+        int number = fakerData.number().numberBetween(1, 4999);
+        String randomFirstName = "Sasa_" + number;
+        System.out.println("Random first name exactly after generate is :" + randomFirstName);
+        return randomFirstName;
+    }
+
+    public String randomLastName() {
+        Faker fakerData = new Faker();
+        int number = fakerData.number().numberBetween(5000, 9999);
+        String randomLastName = "Stjepanovic_" + number;
+        System.out.println("Random last name exactly after generate is :" + randomLastName);
+        return randomLastName;
+    }
+
+    public String randomEmail() {
+        Faker fakerData = new Faker();
+        int number = fakerData.number().numberBetween(5000, 9999);
+        String randomEmail = "stjepanovic_" + number + "@magneto.com";
+        System.out.println("Random email exactly after generate is :" + randomEmail);
+        return randomEmail;
+    }
+
+    public void createAccount(String firstName, String lastName, String email, String password, String confirmPassword, String randomTypeYesNo,
+                              String randomFirstName, String randomLastName, String randomEmail) throws InterruptedException {
+        if (randomTypeYesNo.equalsIgnoreCase("yes")) {
+            typeText(firstNameField, randomFirstName, "random first name is entered");
+            typeText(lastNameField, randomLastName, "random last name is entered");
+            typeText(emailField, randomEmail, "random email is entered");
+            enterPassword(password);
+            enterConfirmPassword(confirmPassword);
+            createAccountButton();
+        } else {
+            enterFirstName(firstName);
+            enterLastName(lastName);
+            enterEmail(email);
+            enterPassword(password);
+            enterConfirmPassword(confirmPassword);
+            createAccountButton();
+        }
+    }
+    public void verifyAccountCrated(String expectedText){
+        compareText(accountRegistered,expectedText);
+    }
+
+    public void verifyAcountInformation(String randomFirstName, String randomLastName, String randomEmail) throws InterruptedException {
+        comparePartOfText(accountInformation, randomFirstName);
+        comparePartOfText(accountInformation, randomLastName);
+        comparePartOfText(accountInformation, randomEmail);
+
+
     }
 }
