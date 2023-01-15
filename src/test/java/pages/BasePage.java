@@ -96,14 +96,24 @@ public class BasePage {
             System.out.println("Checked element" + log);
         }
     }
-
-    //select
-
-    //get text
     public void compareText(WebElement element, String expectedText) {
+        String actualText = element.getText();
+        Assert.assertEquals(actualText, expectedText);
+        System.out.println("Actual text is: " + actualText);
+    }
+
+    public void comparePartOfText(WebElement element, String expectedText) throws InterruptedException {
         String actualTitle = element.getText();
-        Assert.assertEquals(actualTitle, expectedText);
-        System.out.println("Actual title is: " + actualTitle);
+        Thread.sleep(5000);
+        System.out.println("Actual text is: " + actualTitle);
+        Thread.sleep(500);
+        Assert.assertTrue(actualTitle.contains(expectedText), actualTitle);
+    }
+
+    public void getAttribute(WebElement element, String expectedValue, String attributeType) {
+        String actualValue = element.getAttribute(attributeType);
+        System.out.println("Actual value of element is : " + actualValue);
+        Assert.assertEquals(actualValue, expectedValue);
     }
 
     public void scrollToElement (WebElement element){
