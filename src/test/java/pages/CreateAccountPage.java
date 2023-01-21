@@ -8,6 +8,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class CreateAccountPage extends BasePage {
+
     public CreateAccountPage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
@@ -36,6 +37,24 @@ public class CreateAccountPage extends BasePage {
 
     @FindBy(xpath = "//div[@class='box box-information']//div")
     WebElement accountInformation;
+
+    @FindBy(css = "#firstname-error")
+    WebElement firstNameMessage;
+
+    @FindBy(xpath = "//div[@id='lastname-error']")
+    WebElement lastNameMessage;
+
+    @FindBy(xpath = "//div[@id='email_address-error']")
+    WebElement emailMessage;
+
+    @FindBy(xpath = "//div[@id='password-error']")
+    WebElement passwordMessage;
+
+    @FindBy(xpath = "//div[@id='password-confirmation-error']")
+    WebElement passwordConfirmMessage;
+
+    @FindBy(xpath = "//div[@id='password-strength-meter']")
+    WebElement strengthPassword;
 
     public void enterFirstName(String value){
         typeText(firstNameField, value, "first name is entered");
@@ -107,12 +126,41 @@ public class CreateAccountPage extends BasePage {
     public void verifyAccountCrated(String expectedText){
         compareText(accountRegistered,expectedText);
     }
-
     public void verifyAcountInformation(String randomFirstName, String randomLastName, String randomEmail) throws InterruptedException {
         comparePartOfText(accountInformation, randomFirstName);
         comparePartOfText(accountInformation, randomLastName);
         comparePartOfText(accountInformation, randomEmail);
+    }
 
+    public void verifyInvalidAccountMessages(String field, String expectedText) throws Exception {
+        switch (field.toUpperCase()) {
+            case "FIRSTNAME": {
+                compareText(firstNameMessage, expectedText);
+            }
+            break;
+            case "LASTNAME": {
+                compareText(lastNameMessage, expectedText);
+            }
+            break;
+            case "EMAIL": {
+                compareText(emailMessage, expectedText);
+            }
+            break;
+            case "PASSWORD": {
+                compareText(passwordMessage, expectedText);
+            }
+            break;
+            case "CONFIRMPASSWORD": {
+                compareText(passwordConfirmMessage, expectedText);
+            }
+            break;
+            case "STRENGTHPASSWORD": {
+                compareText(strengthPassword, expectedText);
+            }
+            break;
+            default:
+                throw new Exception("No such field: " + field);
 
+        }
     }
 }

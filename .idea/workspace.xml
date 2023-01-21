@@ -5,14 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1a3649dd-a176-4b1d-8f0e-09f3ac34167c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/pages/components/HeaderComponent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/features/3_General.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/features/4_WhatsNewl.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/features/5_Women.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/pages/GeneralPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/pages/WhatsNewPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/pages/WomanPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/features/1_CreateAccount.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/features/1_CreateAccount.feature" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/features/2_Login.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/features/2_Login.feature" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/pages/BasePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/BasePage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/pages/CreateAccountPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/CreateAccountPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/LoginPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/runners/Runner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/runners/Runner.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/steps/BaseSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/steps/BaseSteps.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/test_data/magneto.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/test_data/magneto.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xmls/magnetoTestNGCucumber.xml" beforeDir="false" afterPath="$PROJECT_DIR$/xmls/magnetoTestNGCucumber.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,18 +46,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;1.8&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Lenovo/Desktop/QA projekti/Automation_projekti/magneto/src/test/test_data&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "jdk.selected.JAVA_MODULE": "1.8",
+    "last_opened_file_path": "C:/Users/Lenovo/Desktop/QA projekti/Automation_projekti/magneto/src/test/java/features"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Lenovo\Desktop\QA projekti\Automation_projekti\magneto\src\test\test_data" />
       <recent name="C:\Users\Lenovo\Desktop\QA projekti\Automation_projekti\magneto\src\test\java\features" />
+      <recent name="C:\Users\Lenovo\Desktop\QA projekti\Automation_projekti\magneto\src\test\test_data" />
       <recent name="C:\Users\Lenovo\Desktop\QA projekti\Automation_projekti\magneto\xmls" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -87,7 +95,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="71b56e2c-3883-41f9-8a4b-9be4e5eaedfa" name="Changes" comment="" />
+      <changelist id="1a3649dd-a176-4b1d-8f0e-09f3ac34167c" name="Changes" comment="" />
       <created>1673713466590</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />

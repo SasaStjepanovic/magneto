@@ -16,6 +16,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Random;
+import java.util.concurrent.TimeUnit;
 
 public class BasePage {
 
@@ -57,11 +58,11 @@ public class BasePage {
             element.click();
             element.clear();
             element.sendKeys(text);
-            System.out.println("Entered text: " + text + " to element: " + log);
+            System.out.println("Entered text: " + text + " :to element: " + log);
         } catch (Exception e) {
             e.printStackTrace();
             element.sendKeys(text);
-            System.out.println("Entered text: " + text + " to element: " + log);
+            System.out.println("Entered text: " + text + " :to element: " + log);
         }
     }
 
@@ -110,6 +111,14 @@ public class BasePage {
         Assert.assertTrue(actualTitle.contains(expectedText), actualTitle);
     }
 
+    public void checkUrlPage(String url) {
+        String expextedUrl = "https://magento.softwaretestingboard.com/" + url;
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        String actualUrl = driver.getCurrentUrl();
+        System.out.println("Current url address: " + actualUrl);
+        Assert.assertTrue(actualUrl.contains(expextedUrl), actualUrl);
+    }
+
     public void getAttribute(WebElement element, String expectedValue, String attributeType) {
         String actualValue = element.getAttribute(attributeType);
         System.out.println("Actual value of element is : " + actualValue);
@@ -156,6 +165,9 @@ public class BasePage {
         String name = String.valueOf(fakerData.name());
         System.out.println(name);
         return name;
+    }
+    public void pause(int sec) throws InterruptedException {
+        Thread.sleep(sec*1000);
     }
 
 
