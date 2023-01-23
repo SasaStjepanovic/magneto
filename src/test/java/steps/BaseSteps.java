@@ -38,7 +38,7 @@ public class BaseSteps extends BaseTest {
     }
     @After
     public void tearDown() throws IOException {
-//        quit();
+        quit();
     }
 
     @Given("I am logged in {string} AND {string}")
@@ -151,13 +151,19 @@ public class BaseSteps extends BaseTest {
         wp.selectTopsBootomsProduct(data.get("product"),data.get("productType"));
     }
 
-    @And("user expands women menu item over hover option")
-    public void userExpandsWomenMenuItemOverHoverOption() throws InterruptedException {
+    @And("user expands menu item over hover option")
+    public void userExpandsMenuItemOverHoverOption() throws InterruptedException {
         new GeneralPage(driver).hoverOverMenu(data.get("hoverItem"));
     }
 
     @And("user expands menu sub item over hover option")
-    public void userExpandsMenuSubItemOverHoverOption() {
+    public void userExpandsMenuSubItemOverHoverOption() throws InterruptedException {
+        new GeneralPage(driver).hoverOverSubMenu(data.get("hoverItem"), data.get("hoverSubItem"),data.get("hoverSubSubItem"));
+    }
 
+    @Then("user should verify final page title")
+    public void userShouldVerifyFinalPageTitle() throws InterruptedException {
+        WhatsNewPage wp = new WhatsNewPage(driver);
+        wp.verify1stMenuPageTitles(data.get("menuItemTitle1"),data.get("menuItemTitle2"),data.get("menuItemTitle3"),data.get("hoverSubSubItem"),data.get("firstPageYesNo"));
     }
 }

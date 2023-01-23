@@ -20,7 +20,6 @@ public class WomanPage extends BasePage {
     @FindBy(css = ".subtitle.empty")
     WebElement emptyCart;
 
-
     public void enterMenuItem(String item){
         String path = ("//nav[@class='navigation']/ul/li//span[text()='"+item+"']");
         clickElement(driver.findElement(By.xpath(path)),"Item menu element is entered");

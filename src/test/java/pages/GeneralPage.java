@@ -1,6 +1,7 @@
 package pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -42,14 +43,26 @@ public class GeneralPage extends BasePage {
 
     public void hoverOverMenu(String hoverItem) throws InterruptedException {
         Actions actions = new Actions(driver);
-        pause(5);
+        pause(1);
         actions.moveToElement(driver.findElement(By.xpath("//nav[@class='navigation']/ul/li//span[text()='"+hoverItem+"']"))).build().perform();
+        pause(1);
+    }
+    public void hoverOverSubMenu(String hoverItem, String hoverSubItem, String hoverSubSubItem) throws InterruptedException {
+        Actions actions = new Actions(driver);
+        pause(1);
+        if (hoverItem.equalsIgnoreCase("Women") || hoverItem.equalsIgnoreCase("Men")) {
+            JavascriptExecutor js = (JavascriptExecutor) driver;
+            WebElement el1 = driver.findElement(By.xpath("//nav[@class='navigation']/ul/li//span[text()='" + hoverItem + "']/../../ul//span[text()='" + hoverSubItem + "']/../../ul//span[text()='"+ hoverSubSubItem +"']"));
+            String mouseOverScript = "if(document.createEvent){var evObj = document.createEvent('MouseEvents');evObj.initEvent('mouseover',true, false); arguments[0].dispatchEvent(evObj);} else if(document.createEventObject) { arguments[0].fireEvent('on mouseover');}";
+            js.executeScript(mouseOverScript,el1);
+            clickElementJS(el1, "sub sub menu element:" +hoverItem + "," + hoverSubItem + "," + hoverSubSubItem+ " is clicked");
+
+        } else {
+            WebElement el2 = driver.findElement(By.xpath("//nav[@class='navigation']/ul/li//span[text()='" + hoverItem + "']/../../ul//span[text()='" + hoverSubItem + "']"));
+            actions.moveToElement(driver.findElement(By.xpath("//nav[@class='navigation']/ul/li//span[text()='" + hoverItem + "']/../../ul//span[text()='" + hoverSubItem + "']"))).build().perform();
+            clickElementJS(el2, "sub menu element:" + hoverItem + "," + hoverSubItem + " is clicked");
+        }
     }
 
-    public void hoverOverSubMenu(String hoverSubItem) throws InterruptedException {
-        Actions actions = new Actions(driver);
-        pause(5);
-        actions.moveToElement(driver.findElement(By.xpath("//nav[@class='navigation']/ul/li//span[text()='"+hoverItem+"']"))).build().perform();
-    }
 
 }
