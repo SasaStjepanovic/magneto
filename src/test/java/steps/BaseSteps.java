@@ -36,6 +36,7 @@ public class BaseSteps extends BaseTest {
         randomLastName = cap.randomLastName();
         randomEmail = cap.randomEmail();
     }
+
     @After
     public void tearDown() throws IOException {
         quit();
@@ -58,21 +59,21 @@ public class BaseSteps extends BaseTest {
 
     @And("user enters account credentials")
     public void userEntersAccountCredentials() throws InterruptedException {
-        new CreateAccountPage(driver).createAccount(data.get("firstName"), data.get("lastName"),data.get("email"), data.get("password"),
-                data.get("confirmPassword"),data.get("randomTypeYesNo"), randomFirstName, randomLastName, randomEmail);
+        new CreateAccountPage(driver).createAccount(data.get("firstName"), data.get("lastName"), data.get("email"), data.get("password"),
+                data.get("confirmPassword"), data.get("randomTypeYesNo"), randomFirstName, randomLastName, randomEmail);
     }
 
     @Then("user should verify that account is created")
     public void userShouldVerifyThatAccountIsCreated() throws InterruptedException {
         CreateAccountPage cap = new CreateAccountPage(driver);
         cap.verifyAccountCrated(data.get("accountRegistered"));
-        cap.verifyAcountInformation(randomFirstName, randomLastName,randomEmail);
+        cap.verifyAcountInformation(randomFirstName, randomLastName, randomEmail);
     }
 
     @Then("user should verify that field is an invalid")
     public void userShouldVerifyThatFieldIsAnInvalid() throws Exception {
         CreateAccountPage cap = new CreateAccountPage(driver);
-        cap.verifyInvalidAccountMessages(data.get("field"),data.get("invalidMessageCreateAccount"));
+        cap.verifyInvalidAccountMessages(data.get("field"), data.get("invalidMessageCreateAccount"));
     }
 
     @And("user clicks sign in button")
@@ -82,7 +83,7 @@ public class BaseSteps extends BaseTest {
 
     @And("user enters account credentials for login")
     public void userEntersAccountCredentialsForLogin() {
-        new LoginPage(driver).login(data.get("password"),data.get("email"));
+        new LoginPage(driver).login(data.get("password"), data.get("email"));
     }
 
     @Then("user should verify that login is successfully")
@@ -92,7 +93,7 @@ public class BaseSteps extends BaseTest {
 
     @Then("user should verify that login field is an invalid")
     public void userShouldVerifyThatLoginFieldIsAnInvalid() throws Exception {
-        new LoginPage(driver).verifyInvalidLoginMessages(data.get("field"),data.get("invalidMessageCreateAccount"),data.get("invalidMessageCreateAccount2"));
+        new LoginPage(driver).verifyInvalidLoginMessages(data.get("field"), data.get("invalidMessageCreateAccount"), data.get("invalidMessageCreateAccount2"));
     }
 
     @And("user clicks shoping cart button")
@@ -110,7 +111,7 @@ public class BaseSteps extends BaseTest {
 
     @Then("user click menu shoping items and verify them")
     public void userClickMenuShopingItemsAndVerifyThem() throws InterruptedException {
-        String[] menuItems = {"What's New","Women","Men","Gear","Training","Sale"};
+        String[] menuItems = {"What's New", "Women", "Men", "Gear", "Training", "Sale"};
         GeneralPage gp = new GeneralPage(driver);
         gp.goThroughMenuItems(menuItems);
     }
@@ -124,7 +125,7 @@ public class BaseSteps extends BaseTest {
     @Then("user should be verify menu item page")
     public void userShouldBeVerifyMenuItemPage() throws InterruptedException {
         WhatsNewPage wp = new WhatsNewPage(driver);
-        wp.verify1stMenuPageTitles(data.get("menuItemTitle1"),data.get("menuItemTitle2"),data.get("menuItemTitle3"),data.get("menuItemTitle2Sub"),data.get("firstPageYesNo"));
+        wp.verify1stMenuPageTitles(data.get("menuItemTitle1"), data.get("menuItemTitle2"), data.get("menuItemTitle3"), data.get("menuItemTitle2Sub"), data.get("firstPageYesNo"));
     }
 
     @And("user enters first menu item")
@@ -136,19 +137,19 @@ public class BaseSteps extends BaseTest {
     @And("user selects womens mens product")
     public void userSelectsWomensMensProduct() {
         WhatsNewPage wp = new WhatsNewPage(driver);
-        wp.selectWomensMensProduct(data.get("product"),data.get("productType"));
+        wp.selectWomensMensProduct(data.get("product"), data.get("productType"));
     }
 
     @Then("user should verify next page title")
     public void userShouldVerifyNextPageTitle() throws InterruptedException {
         WhatsNewPage wp = new WhatsNewPage(driver);
-        wp.verify1stMenuPageTitles(data.get("menuItemTitle1"),data.get("menuItemTitle2"),data.get("menuItemTitle3"),data.get("menuItemTitle2Sub"),data.get("firstPageYesNo"));
+        wp.verify1stMenuPageTitles(data.get("menuItemTitle1"), data.get("menuItemTitle2"), data.get("menuItemTitle3"), data.get("menuItemTitle2Sub"), data.get("firstPageYesNo"));
     }
 
-    @And("user selects tops bottoms product")
-    public void userSelectsTopsBottomsProduct() {
+    @And("user selects tops or bottoms product")
+    public void userSelectsTopsOrBottomsProduct() {
         WomanPage wp = new WomanPage(driver);
-        wp.selectTopsBootomsProduct(data.get("product"),data.get("productType"));
+        wp.selectTopsBootomsProduct(data.get("product"), data.get("productType"));
     }
 
     @And("user expands menu item over hover option")
@@ -158,12 +159,22 @@ public class BaseSteps extends BaseTest {
 
     @And("user expands menu sub item over hover option")
     public void userExpandsMenuSubItemOverHoverOption() throws InterruptedException {
-        new GeneralPage(driver).hoverOverSubMenu(data.get("hoverItem"), data.get("hoverSubItem"),data.get("hoverSubSubItem"));
+        new GeneralPage(driver).hoverOverSubMenu(data.get("hoverItem"), data.get("hoverSubItem"), data.get("hoverSubSubItem"));
     }
 
     @Then("user should verify final page title")
     public void userShouldVerifyFinalPageTitle() throws InterruptedException {
         WhatsNewPage wp = new WhatsNewPage(driver);
-        wp.verify1stMenuPageTitles(data.get("menuItemTitle1"),data.get("menuItemTitle2"),data.get("menuItemTitle3"),data.get("hoverSubSubItem"),data.get("firstPageYesNo"));
+        wp.verify1stMenuPageTitles(data.get("menuItemTitle1"), data.get("menuItemTitle2"), data.get("menuItemTitle3"), data.get("hoverSubSubItem"), data.get("firstPageYesNo"));
+    }
+
+    @And("user selects women category")
+    public void userSelectsWomenCategory() {
+        new GeneralPage(driver).clickOnCategory(data.get("categoryWomen"));
+    }
+
+    @And("user selects women category sub item")
+    public void userSelectsWomenCategorySubItem() {
+        new GeneralPage(driver).clickOnCategoryUnderItem(data.get("categoryWomen"), data.get("categoryItemWomen"));
     }
 }

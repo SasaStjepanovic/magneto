@@ -64,5 +64,17 @@ public class GeneralPage extends BasePage {
         }
     }
 
+    public void clickOnCategory(String category){
+      WebElement webElCategory = driver.findElement(By.xpath("//div[@id='narrow-by-list']//div[text()='"+category+"']"));
+      clickElement(webElCategory,"category is choosed: " + category+ ".");
+    }
+
+    public void clickOnCategoryUnderItem(String category, String categoryItem){
+        WebElement webElCategory = driver.findElement(By.xpath("//div[@id='narrow-by-list']//div[text()='"+category+"']/..//div[@class='filter-options-content']//a[contains(text(),'"+categoryItem+"')]"));
+        clickElement(webElCategory,"category sub item is choosed: " +categoryItem + ".");
+    }
+
+
+
 
 }
