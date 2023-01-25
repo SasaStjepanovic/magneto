@@ -31,7 +31,10 @@ public class BasePage {
         WebDriverWait webDriverWait = new WebDriverWait(driver, waitTime);
         webDriverWait.until(ExpectedConditions.visibilityOf(element));
         webDriverWait.until(ExpectedConditions.elementToBeClickable(element));
-
+    }
+    public void explicitWaitInvisibilityOfElement(WebElement element) {
+        WebDriverWait webDriverWait = new WebDriverWait(driver, waitTime);
+        webDriverWait.until(ExpectedConditions.invisibilityOf(element));
     }
 
     public void clickElement(WebElement element, String log) {
@@ -185,6 +188,11 @@ public class BasePage {
     }
     public void pause(int sec) throws InterruptedException {
         Thread.sleep(sec*1000);
+    }
+
+    public void verifyButtonInvisibility(WebElement element){
+        explicitWaitInvisibilityOfElement(element);
+        System.out.println("Element");
     }
 
 

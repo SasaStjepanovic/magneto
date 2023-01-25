@@ -177,4 +177,30 @@ public class BaseSteps extends BaseTest {
     public void userSelectsWomenCategorySubItem() {
         new GeneralPage(driver).clickOnCategoryUnderItem(data.get("categoryWomen"), data.get("categoryItemWomen"));
     }
+
+    @Then("user should verify choosed sub items")
+    public void userShouldVerifyChoosedSubItems() {
+        new GeneralPage(driver).verifyFilteredValues(data.get("categoryWomen"), data.get("categoryItemWomen"));
+    }
+
+    @And("user clicks clears all button")
+    public void userClicksClearsAllButton() {
+        new GeneralPage(driver).clearAllButton();
+    }
+
+    @Then("user should verify invisibility of button")
+    public void userShouldVerifyInvisibilityOfButton() {
+        new GeneralPage(driver).verifyButtonInvisibility();
+    }
+
+    @And("user deletes items one by one")
+    public void userDeletesItemsOneByOne() {
+        new GeneralPage(driver).clearOneByOne();
+    }
+
+//    @And("user selects women category multiple sub")
+//    public void userSelectsWomenCategoryMultipleSub() {
+//        new GeneralPage(driver).clickOnMultipleCategoryUnderItem(data.get("categoryWomen"), data.get("categoryItemWomen1"), data.get("categoryItemWomen2"));
+//    }
 }
+

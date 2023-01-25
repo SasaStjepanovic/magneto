@@ -22,6 +22,21 @@ public class GeneralPage extends BasePage {
     @FindBy(css = ".subtitle.empty")
     WebElement emptyCart;
 
+    @FindBy(xpath = "//div[@class='filter-current']//span[@class='filter-label']")
+    WebElement filterCategory;
+
+    @FindBy(xpath = "//div[@class='filter-current']//span[@class='filter-value']")
+    WebElement filterCategoryUnderItem;
+
+    @FindBy(xpath = "//span[text()='Clear All']")
+    WebElement clearAllButton;
+
+    @FindBy(xpath = "//*[@class='action remove']")
+    WebElement clearXbutton;
+
+    @FindBy(xpath = "//div[@class='filter-current']//li")
+    WebElement filterContainerItems;
+
 
   public void miniCartButton(){
       clickElement(miniCart, "minicart button is pressed");
@@ -69,12 +84,64 @@ public class GeneralPage extends BasePage {
       clickElement(webElCategory,"category is choosed: " + category+ ".");
     }
 
-    public void clickOnCategoryUnderItem(String category, String categoryItem){
-        WebElement webElCategory = driver.findElement(By.xpath("//div[@id='narrow-by-list']//div[text()='"+category+"']/..//div[@class='filter-options-content']//a[contains(text(),'"+categoryItem+"')]"));
-        clickElement(webElCategory,"category sub item is choosed: " +categoryItem + ".");
+    public void clickOnCategoryUnderItem(String category, String categoryItem1){
+        try {
+            WebElement webElCategory1 = driver.findElement(By.xpath("//div[@id='narrow-by-list']//div[text()='"+category+"']/..//div[@class='filter-options-content']//a[contains(text(),'"+categoryItem1+"')]"));
+            clickElement(webElCategory1, "category sub item is choosed: " + categoryItem1 + ".");
+        } catch (Exception e){
+            try {
+                WebElement webElCategory2 = driver.findElement(By.xpath("//div[@id='narrow-by-list']//div[text()='" + category + "']/..//div[@class='filter-options-content']//a[contains(@aria-label,'" + categoryItem1 + "')]"));
+                clickElement(webElCategory2, "category sub item is choosed: " + categoryItem1 + ".");
+            }catch (Exception m){
+                WebElement webElCategory3 = driver.findElement(By.xpath("//div[@id='narrow-by-list']//div[text()='" + category + "']/..//div[@class='filter-options-content']//div[contains(@option-label,'" + categoryItem1 + "')]"));
+                clickElement(webElCategory3, "category sub item is choosed: " + categoryItem1 + ".");
+            }
+        }
     }
 
+//    public void clickOnMultipleCategoryUnderItem(String category, String categoryItem1, String categoryItem2){
+//        try {
+//            WebElement webElCategory1 = driver.findElement(By.xpath("//div[@id='narrow-by-list']//div[text()='"+category+"']/..//div[@class='filter-options-content']//a[contains(text(),'"+categoryItem1+"')]"));
+//            clickElement(webElCategory1, "category sub item is choosed: " + categoryItem1 + ".");
+//            clickElement(webElCategory1, "category sub item is choosed: " + categoryItem2 + ".");
+//        } catch (Exception e){
+//            try {
+//                WebElement webElCategory2 = driver.findElement(By.xpath("//div[@id='narrow-by-list']//div[text()='" + category + "']/..//div[@class='filter-options-content']//a[contains(@aria-label,'" + categoryItem1 + "')]"));
+//                clickElement(webElCategory2, "category sub item is choosed: " + categoryItem1 + ".");
+//                clickElement(webElCategory2, "category sub item is choosed: " + categoryItem2 + ".");
+//            }catch (Exception m){
+//                WebElement webElCategory3 = driver.findElement(By.xpath("//div[@id='narrow-by-list']//div[text()='" + category + "']/..//div[@class='filter-options-content']//div[contains(@option-label,'" + categoryItem1 + "')]"));
+//                clickElement(webElCategory3, "category sub item is choosed: " + categoryItem1 + ".");
+//                clickElement(webElCategory3, "category sub item is choosed: " + categoryItem2 + ".");
+//
+//            }
+//        }
+//    }
+    public void verifyFilteredValues(String categoryName, String categoryUnderItemName){
+        compareText(filterCategory, categoryName);
+        compareText(filterCategoryUnderItem, categoryUnderItemName);
+    }
 
+    public void clearAllButton(){
+      clickElement(clearAllButton, "clear all button is pressed");
+    }
 
+    public void clearOneByOne() {
+      boolean listItems = driver.findElements(By.xpath("//div[@class='filter-current']//li")).size()>0;
+        if (listItems) {
+            System.out.println("filter vidljiv i uradi brisanje elemenata dok je viljiv x buttoncic");
+            List<WebElement> listOfItems = driver.findElements(By.xpath("//div[@class='filter-current']//li"));
+            for (int i = 0; i < listOfItems.size(); i++){
+                clickElement(clearXbutton, "x button for clear is pressed");
+            }
+        } else {
+            System.out.println("filter nije vidljiv");
+        }
+    }
+
+    public void verifyButtonInvisibility(){
+        explicitWaitInvisibilityOfElement(clearAllButton);
+        System.out.println("Element is not more visible");
+    }
 
 }
