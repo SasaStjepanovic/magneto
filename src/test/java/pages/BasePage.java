@@ -4,6 +4,7 @@ import io.qameta.allure.Allure;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -31,7 +32,10 @@ public class BasePage {
         WebDriverWait webDriverWait = new WebDriverWait(driver, waitTime);
         webDriverWait.until(ExpectedConditions.visibilityOf(element));
         webDriverWait.until(ExpectedConditions.elementToBeClickable(element));
-
+    }
+    public void explicitWaitInvisibilityOfElement() {
+        WebDriverWait webDriverWait = new WebDriverWait(driver, waitTime);
+        webDriverWait.until(ExpectedConditions.invisibilityOfElementLocated((By.xpath("//span[text()='Clear All']"))));
     }
 
     public void clickElement(WebElement element, String log) {
@@ -78,6 +82,7 @@ public class BasePage {
             System.out.println("Entered text: " + text + " :to element: " + log);
         } catch (Exception e) {
             e.printStackTrace();
+            element.click();
             element.sendKeys(text);
             System.out.println("Entered text: " + text + " :to element: " + log);
         }
@@ -115,6 +120,7 @@ public class BasePage {
         }
     }
     public void compareText(WebElement element, String expectedText) {
+        explicitWait(element);
         String actualText = element.getText();
         Assert.assertEquals(actualText, expectedText);
         System.out.println("Actual text is: " + actualText);
@@ -185,6 +191,11 @@ public class BasePage {
     }
     public void pause(int sec) throws InterruptedException {
         Thread.sleep(sec*1000);
+    }
+
+    public void verifyButtonInvisibility(){
+        explicitWaitInvisibilityOfElement();
+        System.out.println("Element");
     }
 
 
