@@ -4,12 +4,6 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-<<<<<<< HEAD
-    <list default="true" id="1a3649dd-a176-4b1d-8f0e-09f3ac34167c" name="Changes" comment="" />
-=======
-<<<<<<< HEAD
-    <list default="true" id="1a3649dd-a176-4b1d-8f0e-09f3ac34167c" name="Changes" comment="" />
-=======
     <list default="true" id="1a3649dd-a176-4b1d-8f0e-09f3ac34167c" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/src/test/java/RetryFailedTests/Annotation.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/test/java/RetryFailedTests/Retry.java" afterDir="false" />
@@ -27,8 +21,6 @@
       <change beforePath="$PROJECT_DIR$/src/test/test_data/magneto.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/test_data/magneto.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/xmls/magnetoTestNGproba.xml" beforeDir="false" afterPath="$PROJECT_DIR$/xmls/magnetoTestNGproba.xml" afterDir="false" />
     </list>
->>>>>>> cfefaa1a448f8b4d69948e64acb4930586229aa2
->>>>>>> 43a7de7bba2b982cb3e02bc0a427c231288713ec
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
