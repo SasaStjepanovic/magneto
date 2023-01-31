@@ -6,8 +6,8 @@ Feature: Women scenarios include selecting tops & bottoms product directly and o
     Given a user reads test data from "magneto" "women" by id "<TC_ID>"
     And user enters menu item
     And user selects tops or bottoms product
-    And user selects women category
-    And user selects women category sub item
+    And user selects women categoryFirst
+    And user selects women category sub itemFirst
     Then user should verify choosed sub items
     And user deletes items one by one
     Then user should verify invisibility of button
@@ -34,8 +34,8 @@ Feature: Women scenarios include selecting tops & bottoms product directly and o
     Given a user reads test data from "magneto" "women" by id "<TC_ID>"
     And user enters menu item
     And user selects tops or bottoms product
-    And user selects women category
-    And user selects women category sub item
+    And user selects women categoryFirst
+    And user selects women category sub itemFirst
     Then user should verify next page title
 
     Examples:
@@ -48,8 +48,8 @@ Feature: Women scenarios include selecting tops & bottoms product directly and o
     Given a user reads test data from "magneto" "women" by id "<TC_ID>"
     And user enters menu item
     And user selects tops or bottoms product
-    And user selects women category
-    And user selects women category sub item
+    And user selects women categoryFirst
+    And user selects women category sub itemFirst
     Then user should verify choosed sub items
     Then user should verify next page title
 
@@ -63,8 +63,8 @@ Feature: Women scenarios include selecting tops & bottoms product directly and o
     Given a user reads test data from "magneto" "women" by id "<TC_ID>"
     And user enters menu item
     And user selects tops or bottoms product
-    And user selects women category
-    And user selects women category sub item
+    And user selects women categoryFirst
+    And user selects women category sub itemFirst
     Then user should verify next page title
 
     Examples:
@@ -77,8 +77,8 @@ Feature: Women scenarios include selecting tops & bottoms product directly and o
     Given a user reads test data from "magneto" "women" by id "<TC_ID>"
     And user enters menu item
     And user selects tops or bottoms product
-    And user selects women category
-    And user selects women category sub item
+    And user selects women categoryFirst
+    And user selects women category sub itemFirst
     Then user should verify next page title
 
     Examples:
@@ -91,8 +91,8 @@ Feature: Women scenarios include selecting tops & bottoms product directly and o
     Given a user reads test data from "magneto" "women" by id "<TC_ID>"
     And user enters menu item
     And user selects tops or bottoms product
-    And user selects women category
-    And user selects women category sub item
+    And user selects women categoryFirst
+    And user selects women category sub itemFirst
     Then user should verify next page title
 
     Examples:
@@ -105,8 +105,8 @@ Feature: Women scenarios include selecting tops & bottoms product directly and o
     Given a user reads test data from "magneto" "women" by id "<TC_ID>"
     And user enters menu item
     And user selects tops or bottoms product
-    And user selects women category
-    And user selects women category sub item
+    And user selects women categoryFirst
+    And user selects women category sub itemFirst
     Then user should verify next page title
 
     Examples:
@@ -119,8 +119,8 @@ Feature: Women scenarios include selecting tops & bottoms product directly and o
     Given a user reads test data from "magneto" "women" by id "<TC_ID>"
     And user enters menu item
     And user selects tops or bottoms product
-    And user selects women category
-    And user selects women category sub item
+    And user selects women categoryFirst
+    And user selects women category sub itemFirst
     Then user should verify choosed sub items
     And user clicks clears all button
     Then user should verify invisibility of button
@@ -130,24 +130,23 @@ Feature: Women scenarios include selecting tops & bottoms product directly and o
       | TC_ID  |
       | SI_006 |
 
+  @Magneto
+  Scenario Outline: Clear [multiple] bought items from filter one by one and verify that 'Clear All' button is disappeared
 
+    Given a user reads test data from "magneto" "women" by id "<TC_ID>"
+    And user enters menu item
+    And user selects tops or bottoms product
+    And user selects women categoryFirst
+    And user selects women category sub itemFirst
+    Then user should verify choosed sub items
+    And user selects women categorySecond
+    And user selects women category sub itemSecond
+    And user deletes items one by one
+    Then user should verify next page title
 
-#  @Magneto
-#  Scenario Outline: Clear [multiple] bought items from filter one by one and verify that 'Clear All' button is disappeared
-#
-#    Given a user reads test data from "magneto" "women" by id "<TC_ID>"
-#    And user enters menu item
-#    And user selects tops or bottoms product
-#    And user selects women category
-#    And user selects women category multiple sub
-#    Then user should verify choosed sub items
-#    And user deletes items one by one
-#    Then user should verify invisibility of button
-#    Then user should verify next page title
-#
-#    Examples:
-#      | TC_ID  |
-#      | SI_002 |
+    Examples:
+      | TC_ID  |
+      | SI_006 |
 
 
 

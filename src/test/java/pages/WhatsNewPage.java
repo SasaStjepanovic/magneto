@@ -16,7 +16,6 @@ public class WhatsNewPage extends BasePage {
     }
     @FindBy(css = "#page-title-heading")
     WebElement menuPageTitle1;
-
     @FindBy(xpath = "//div[@class='categories-menu']//strong[1]/span")
     WebElement menuPageTitle2;
 

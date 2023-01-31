@@ -16,6 +16,9 @@ public class GeneralPage extends BasePage {
         super(driver);
         PageFactory.initElements(driver, this);
     }
+
+    @FindBy(xpath = "//input[@id='search']")
+    WebElement seacrh;
     @FindBy(css = ".minicart-wrapper")
     WebElement miniCart;
 
@@ -37,6 +40,16 @@ public class GeneralPage extends BasePage {
     @FindBy(xpath = "//div[@class='filter-current']//li")
     WebElement filterContainerItems;
 
+    @FindBy(xpath = "//div[@id='search_autocomplete']/ul/li[3]")
+    WebElement dropDownMenuItem;
+
+    @FindBy(xpath = "//main[@id='maincontent']//span")
+    WebElement seacxrhedDropItem;
+
+    public void searchMain (String text){
+        typeText(seacrh, text,  " text is entered in the search field");
+//        clickElement(seacrh, "");
+    }
 
   public void miniCartButton(){
       clickElement(miniCart, "minicart button is pressed");
@@ -84,39 +97,38 @@ public class GeneralPage extends BasePage {
       clickElement(webElCategory,"category is choosed: " + category+ ".");
     }
 
-    public void clickOnCategoryUnderItem(String category, String categoryItem1){
+    public void clickOnCategoryUnderItem1(String category1, String categoryItem1){
         try {
-            WebElement webElCategory1 = driver.findElement(By.xpath("//div[@id='narrow-by-list']//div[text()='"+category+"']/..//div[@class='filter-options-content']//a[contains(text(),'"+categoryItem1+"')]"));
-            clickElement(webElCategory1, "category sub item is choosed: " + categoryItem1 + ".");
+            WebElement webElCategory1 = driver.findElement(By.xpath("//div[@id='narrow-by-list']//div[text()='"+category1+"']/..//div[@class='filter-options-content']//a[contains(text(),'"+categoryItem1+"')]"));
+            clickElement(webElCategory1, "category sub itemFirst is choosed: " + categoryItem1 + ".");
         } catch (Exception e){
             try {
-                WebElement webElCategory2 = driver.findElement(By.xpath("//div[@id='narrow-by-list']//div[text()='" + category + "']/..//div[@class='filter-options-content']//a[contains(@aria-label,'" + categoryItem1 + "')]"));
-                clickElement(webElCategory2, "category sub item is choosed: " + categoryItem1 + ".");
+                WebElement webElCategory2 = driver.findElement(By.xpath("//div[@id='narrow-by-list']//div[text()='" + category1 + "']/..//div[@class='filter-options-content']//a[contains(@aria-label,'" + categoryItem1 + "')]"));
+                clickElement(webElCategory2, "category sub itemFirst is choosed: " + categoryItem1 + ".");
             }catch (Exception m){
-                WebElement webElCategory3 = driver.findElement(By.xpath("//div[@id='narrow-by-list']//div[text()='" + category + "']/..//div[@class='filter-options-content']//div[contains(@option-label,'" + categoryItem1 + "')]"));
-                clickElement(webElCategory3, "category sub item is choosed: " + categoryItem1 + ".");
+                WebElement webElCategory3 = driver.findElement(By.xpath("//div[@id='narrow-by-list']//div[text()='" + category1 + "']/..//div[@class='filter-options-content']//div[contains(@option-label,'" + categoryItem1 + "')]"));
+                clickElement(webElCategory3, "category sub itemFirst is choosed: " + categoryItem1 + ".");
             }
+
         }
     }
 
-//    public void clickOnMultipleCategoryUnderItem(String category, String categoryItem1, String categoryItem2){
-//        try {
-//            WebElement webElCategory1 = driver.findElement(By.xpath("//div[@id='narrow-by-list']//div[text()='"+category+"']/..//div[@class='filter-options-content']//a[contains(text(),'"+categoryItem1+"')]"));
-//            clickElement(webElCategory1, "category sub item is choosed: " + categoryItem1 + ".");
-//            clickElement(webElCategory1, "category sub item is choosed: " + categoryItem2 + ".");
-//        } catch (Exception e){
-//            try {
-//                WebElement webElCategory2 = driver.findElement(By.xpath("//div[@id='narrow-by-list']//div[text()='" + category + "']/..//div[@class='filter-options-content']//a[contains(@aria-label,'" + categoryItem1 + "')]"));
-//                clickElement(webElCategory2, "category sub item is choosed: " + categoryItem1 + ".");
-//                clickElement(webElCategory2, "category sub item is choosed: " + categoryItem2 + ".");
-//            }catch (Exception m){
-//                WebElement webElCategory3 = driver.findElement(By.xpath("//div[@id='narrow-by-list']//div[text()='" + category + "']/..//div[@class='filter-options-content']//div[contains(@option-label,'" + categoryItem1 + "')]"));
-//                clickElement(webElCategory3, "category sub item is choosed: " + categoryItem1 + ".");
-//                clickElement(webElCategory3, "category sub item is choosed: " + categoryItem2 + ".");
-//
-//            }
-//        }
-//    }
+    public void clickOnCategoryUnderItem2(String category2, String categoryItem2){
+        try {
+            WebElement webElCategory1 = driver.findElement(By.xpath("//div[@id='narrow-by-list']//div[text()='"+category2+"']/..//div[@class='filter-options-content']//a[contains(text(),'"+categoryItem2+"')]"));
+            clickElement(webElCategory1, "category sub itemSecond is choosed: " + categoryItem2 + ".");
+        } catch (Exception e){
+            try {
+                WebElement webElCategory2 = driver.findElement(By.xpath("//div[@id='narrow-by-list']//div[text()='" + category2 + "']/..//div[@class='filter-options-content']//a[contains(@aria-label,'" + categoryItem2 + "')]"));
+                clickElement(webElCategory2, "category sub itemSecond is choosed: " + categoryItem2 + ".");
+            }catch (Exception m){
+                WebElement webElCategory3 = driver.findElement(By.xpath("//div[@id='narrow-by-list']//div[text()='" + category2 + "']/..//div[@class='filter-options-content']//div[contains(@option-label,'" + categoryItem2 + "')]"));
+                clickElement(webElCategory3, "category sub itemSecond is choosed: " + categoryItem2 + ".");
+            }
+
+        }
+    }
+
     public void verifyFilteredValues(String categoryName, String categoryUnderItemName){
         compareText(filterCategory, categoryName);
         compareText(filterCategoryUnderItem, categoryUnderItemName);
@@ -129,19 +141,42 @@ public class GeneralPage extends BasePage {
     public void clearOneByOne() {
       boolean listItems = driver.findElements(By.xpath("//div[@class='filter-current']//li")).size()>0;
         if (listItems) {
-            System.out.println("filter vidljiv i uradi brisanje elemenata dok je viljiv x buttoncic");
+            System.out.println("filter is visible and doing deleting elements always when x button is visible");
             List<WebElement> listOfItems = driver.findElements(By.xpath("//div[@class='filter-current']//li"));
             for (int i = 0; i < listOfItems.size(); i++){
                 clickElement(clearXbutton, "x button for clear is pressed");
             }
         } else {
-            System.out.println("filter nije vidljiv");
+            System.out.println("filter is no more visible");
         }
     }
 
     public void verifyButtonInvisibility(){
-        explicitWaitInvisibilityOfElement(clearAllButton);
-        System.out.println("Element is not more visible");
+        explicitWaitInvisibilityOfElement();
+        System.out.println("Element is no more visible");
+    }
+
+    public void verifySearchItems(String[] expectedItem1, String[] expectedItem2) throws InterruptedException {
+        List<WebElement> searchItems = driver.findElements(By.xpath("//div[@id='search_autocomplete']/ul/li"));
+        for(int i = 1; i < searchItems.size(); i++) {
+            String actualText = driver.findElements(By.xpath("//div[@id='search_autocomplete']/ul/li['"+i+"']//span[1]")).get(i).getText();
+            System.out.println("Search name item_"+i+": " + actualText + " ,is displayed before comparing");
+            String actualNumber = driver.findElements(By.xpath("//div[@id='search_autocomplete']/ul/li['"+i+"']//span[2]")).get(i).getText();
+            System.out.println("Search number of item_"+i+": " + actualNumber + " ,is displayed before comparing");
+            Assert.assertEquals(actualText, expectedItem1[i]);
+            Assert.assertEquals(actualNumber, expectedItem2[i]);
+
+        }
+    }
+
+    public void clikDropDownMenuItem(String dropDownItem){
+        WebElement element = driver.findElement(By.xpath("//div[@id='search_autocomplete']/ul/li/span[text()='"+dropDownItem+"']"));
+        clickElement(element, "dropdown menu item is clicked");
+    }
+
+    public void verifySearchedItem(String searchedItem){
+        compareText(seacxrhedDropItem,searchedItem);
     }
 
 }
+

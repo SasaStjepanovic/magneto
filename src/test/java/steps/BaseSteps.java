@@ -168,19 +168,19 @@ public class BaseSteps extends BaseTest {
         wp.verify1stMenuPageTitles(data.get("menuItemTitle1"), data.get("menuItemTitle2"), data.get("menuItemTitle3"), data.get("hoverSubSubItem"), data.get("firstPageYesNo"));
     }
 
-    @And("user selects women category")
-    public void userSelectsWomenCategory() {
-        new GeneralPage(driver).clickOnCategory(data.get("categoryWomen"));
+    @And("user selects women categoryFirst")
+    public void userSelectsWomenCategoryFirst() {
+        new GeneralPage(driver).clickOnCategory(data.get("categoryWomen1"));
     }
 
-    @And("user selects women category sub item")
-    public void userSelectsWomenCategorySubItem() {
-        new GeneralPage(driver).clickOnCategoryUnderItem(data.get("categoryWomen"), data.get("categoryItemWomen"));
+    @And("user selects women category sub itemFirst")
+    public void userSelectsWomenCategorySubItemFirst() {
+        new GeneralPage(driver).clickOnCategoryUnderItem1(data.get("categoryWomen1"), data.get("categoryItemWomen1"));
     }
 
     @Then("user should verify choosed sub items")
     public void userShouldVerifyChoosedSubItems() {
-        new GeneralPage(driver).verifyFilteredValues(data.get("categoryWomen"), data.get("categoryItemWomen"));
+        new GeneralPage(driver).verifyFilteredValues(data.get("categoryWomen1"), data.get("categoryItemWomen1"));
     }
 
     @And("user clicks clears all button")
@@ -198,9 +198,64 @@ public class BaseSteps extends BaseTest {
         new GeneralPage(driver).clearOneByOne();
     }
 
-//    @And("user selects women category multiple sub")
-//    public void userSelectsWomenCategoryMultipleSub() {
-//        new GeneralPage(driver).clickOnMultipleCategoryUnderItem(data.get("categoryWomen"), data.get("categoryItemWomen1"), data.get("categoryItemWomen2"));
-//    }
+    @Then("user should verify choosed sub items{int}")
+    public void userShouldVerifyChoosedSubItems(int arg0) {
+        new GeneralPage(driver).verifyFilteredValues(data.get("categoryWomen2"), data.get("categoryItemWomen2"));
+    }
+
+    @And("user selects women category sub itemSecond")
+    public void userSelectsWomenCategorySubItemSecond() {
+        new GeneralPage(driver).clickOnCategoryUnderItem2(data.get("categoryWomen2"), data.get("categoryItemWomen2"));
+    }
+
+    @And("user selects women categorySecond")
+    public void userSelectsWomenCategorySecond() {
+        new GeneralPage(driver).clickOnCategory(data.get("categoryWomen2"));
+    }
+
+    @And("user selects men categoryFirst")
+    public void userSelectsMenCategoryFirst() {
+        new GeneralPage(driver).clickOnCategory(data.get("categoryMen1"));
+    }
+
+    @And("user selects men category sub itemFirst")
+    public void userSelectsMenCategorySubItemFirst() {
+        new GeneralPage(driver).clickOnCategoryUnderItem1(data.get("categoryMen1"), data.get("categoryItemMen1"));
+    }
+
+    @Then("user should verify choosed men sub items")
+    public void userShouldVerifyChoosedMenSubItems() {
+        new GeneralPage(driver).verifyFilteredValues(data.get("categoryMen1"), data.get("categoryItemMen1"));
+    }
+
+    @And("user selects men categorySecond")
+    public void userSelectsMenCategorySecond() {
+        new GeneralPage(driver).clickOnCategory(data.get("categoryMen2"));
+    }
+
+    @And("user selects men category sub itemSecond")
+    public void userSelectsMenCategorySubItemSecond() {
+        new GeneralPage(driver).clickOnCategoryUnderItem2(data.get("categoryMen2"), data.get("categoryItemMen2"));
+    }
+
+    @And("user enters text in the search field")
+    public void userEntersTextInTheSearchField() {
+        new GeneralPage(driver).searchMain(data.get("menuItemTitle2Sub"));
+    }
+
+    @Then("user should verify searched items")
+    public void userShouldVerifySearchedItems() throws InterruptedException {
+        new GeneralPage(driver).verifySearchItems(new String[]{data.get("searchRowText1"),data.get("searchRowText2"),data.get("searchRowText3"),data.get("searchRowText4"),data.get("searchRowText5"),data.get("searchRowText6")}, new String[]{data.get("searchRowNumber1"),data.get("searchRowNumber2"),data.get("searchRowNumber3"),data.get("searchRowNumber4"),data.get("searchRowNumber5"),data.get("searchRowNumber6")});
+    }
+
+    @And("user clicks on of dropdown items")
+    public void userClicksOnOfDropdownItems() {
+        new GeneralPage(driver).clikDropDownMenuItem(data.get("searchDropDpwnItem"));
+    }
+
+    @Then("user should verify final page after searching title")
+    public void userShouldVerifyFinalPageAfterSearchingTitle() {
+        new GeneralPage(driver).verifySearchedItem(data.get("titleOfSearchedItem"));
+    }
 }
 

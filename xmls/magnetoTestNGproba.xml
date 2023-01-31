@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 
-<suite name="Product tests" parallel="tests" thread-count="2">
+<suite name="TestNG RetryFailedTest.Listener Example">
+
+    <listeners>
+        <listener class-name="RetryFailedTests.Annotation"/>
+    </listeners>
 
     <parameter name="browser" value="CHROME"/>
     <parameter name="env" value="PROD"/>
     <parameter name="wait" value="10"/>
     <parameter name="screenshot" value="Yes"/>
 
-    <test name="SwagLabsTest">
+    <test name="SwagLabsTest" preserve-order="true">
         <classes>
             <class name="tests.LoginProbaTestNG"/>
         </classes>
