@@ -5,7 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1a3649dd-a176-4b1d-8f0e-09f3ac34167c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/test/java/RetryFailedTests/Annotation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/RetryFailedTests/Retry.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/RetryFailedTests/RetryListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/features/6_Men.feature" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/features/3_General.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/features/3_General.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/features/5_Women.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/features/5_Women.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/BasePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/BasePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/GeneralPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/GeneralPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/WhatsNewPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/WhatsNewPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/steps/BaseSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/steps/BaseSteps.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/LoginProbaTestNG.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/LoginProbaTestNG.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/test_data/magneto.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/test_data/magneto.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xmls/magnetoTestNGproba.xml" beforeDir="false" afterPath="$PROJECT_DIR$/xmls/magnetoTestNGproba.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +39,13 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
   <component name="ProjectId" id="2KKBay2UkZd4zQiOD6FYuzGhLeT" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -36,14 +57,27 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;1.8&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Lenovo/Desktop/QA projekti/Automation_projekti/magneto/src/test/java/features&quot;
+    &quot;last_directory_selection&quot;: &quot;C:/Users/Lenovo/Desktop/QAprojekti/Automation_projekti/magneto/src/main/java&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Lenovo/Desktop/QAprojekti/Automation_projekti/magneto/src/test/java/features&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Lenovo\Desktop\QAprojekti\Automation_projekti\magneto\src\test\java\features" />
       <recent name="C:\Users\Lenovo\Desktop\QA projekti\Automation_projekti\magneto\src\test\java\features" />
       <recent name="C:\Users\Lenovo\Desktop\QA projekti\Automation_projekti\magneto\src\test\test_data" />
       <recent name="C:\Users\Lenovo\Desktop\QA projekti\Automation_projekti\magneto\xmls" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Lenovo\Desktop\QAprojekti\Automation_projekti\magneto\src\test\java" />
+    </key>
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="RetryFailedTests" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="pages" />
@@ -53,6 +87,16 @@
     <configuration name="C:/Users/Lenovo/Desktop/QA projekti/Automation_projekti/magneto/xmls/magnetoTestNGCucumber.xml" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="magneto" />
       <option name="SUITE_NAME" value="$PROJECT_DIR$/xmls/magnetoTestNGCucumber.xml" />
+      <option name="TEST_OBJECT" value="SUITE" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="C:/Users/Lenovo/Desktop/QA projekti/Automation_projekti/magneto/xmls/magnetoTestNGproba.xml" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="magneto" />
+      <option name="SUITE_NAME" value="$PROJECT_DIR$/xmls/magnetoTestNGproba.xml" />
       <option name="TEST_OBJECT" value="SUITE" />
       <properties />
       <listeners />
@@ -70,9 +114,28 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="LoginProbaTestNG" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="magneto" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.LoginProbaTestNG" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="TestNG.C:/Users/Lenovo/Desktop/QA projekti/Automation_projekti/magneto/xmls/magnetoTestNGCucumber.xml" />
+        <item itemvalue="TestNG.C:/Users/Lenovo/Desktop/QA projekti/Automation_projekti/magneto/xmls/magnetoTestNGproba.xml" />
+        <item itemvalue="TestNG.LoginProbaTestNG" />
         <item itemvalue="TestNG.C:/Users/Lenovo/Desktop/QA projekti/Automation_projekti/magneto/xmls/magneto.xml" />
       </list>
     </recent_temporary>

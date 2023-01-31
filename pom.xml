@@ -76,12 +76,6 @@
             <artifactId>poi-ooxml</artifactId>
             <version>3.15</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/com.github.javafaker/javafaker -->
-        <dependency>
-            <groupId>com.github.javafaker</groupId>
-            <artifactId>javafaker</artifactId>
-            <version>1.0.2</version>
-        </dependency>
         <dependency>
             <groupId>com.github.cliftonlabs</groupId>
             <artifactId>json-simple</artifactId>
@@ -107,12 +101,21 @@
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
                         -Dcucumber.options="--plugin io.qameta.allure.cucumber6Jvm.AllureCucumber6Jvm"
                     </argLine>
+                    <suiteXmlFiles>
+                        <suiteXmlFile>${suiteXmlFiles}</suiteXmlFile>
+                    </suiteXmlFiles>
+                    <properties>
+                        <property>
+                            <name>listener</name>
+                            <value>Utils.MyTestListenerAdapter,Utils.MyRetryAnalizer</value>
+                        </property>
+                    </properties>
                 </configuration>
                 <dependencies>
                     <dependency>
                         <groupId>org.aspectj</groupId>
                         <artifactId>aspectjweaver</artifactId>
-                        <version>${aspectj.version}</version>
+                        <version>1.9.6</version>
                     </dependency>
                 </dependencies>
             </plugin>

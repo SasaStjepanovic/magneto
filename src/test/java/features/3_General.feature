@@ -213,3 +213,26 @@ Feature: General scenarios include check web cart and enter/verify each of menu 
       | TC_ID  |
       | SI_010 |
 
+  @Magneto
+  Scenario Outline: Enter 'Jackets' at the search field and verify all searched dropdown items
+
+    Given a user reads test data from "magneto" "general" by id "<TC_ID>"
+    And user enters text in the search field
+    Then user should verify searched items
+
+    Examples:
+      | TC_ID  |
+      | SI_003 |
+
+  @Magneto
+  Scenario Outline: Enter 'Jackets' at the search field and select one of dropdown items and verify
+
+    Given a user reads test data from "magneto" "general" by id "<TC_ID>"
+    And user enters text in the search field
+    And user clicks on of dropdown items
+    Then user should verify final page after searching title
+
+    Examples:
+      | TC_ID  |
+      | SI_003 |
+
