@@ -18,7 +18,7 @@
 #### Women page ####
 #### Men page ####
 #### Gear page ####
-### Training page ####
+#### Training page ####
 #### Sale page ###
 
 ### Project development progress
