@@ -4,7 +4,7 @@
 <suite name="TestNG RetryFailedTest.Listener Example">
 
     <listeners>
-        <listener class-name="RetryFailedTests.Annotation"/>
+        <listener class-name="RetryFailedTests.RetryListener"/>
     </listeners>
 
     <parameter name="browser" value="CHROME"/>

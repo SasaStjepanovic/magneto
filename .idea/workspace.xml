@@ -5,20 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1a3649dd-a176-4b1d-8f0e-09f3ac34167c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/RetryFailedTests/Annotation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/RetryFailedTests/Retry.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/RetryFailedTests/RetryListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/features/6_Men.feature" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/features/3_General.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/features/3_General.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/features/5_Women.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/features/5_Women.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/BasePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/BasePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/GeneralPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/GeneralPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/WhatsNewPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/WhatsNewPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/steps/BaseSteps.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/steps/BaseSteps.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/LoginProbaTestNG.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/LoginProbaTestNG.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/test_data/magneto.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/test_data/magneto.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/RetryFailedTests/Annotation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/RetryFailedTests/Annotation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/xmls/magnetoTestNGproba.xml" beforeDir="false" afterPath="$PROJECT_DIR$/xmls/magnetoTestNGproba.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
